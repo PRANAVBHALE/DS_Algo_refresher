@@ -18,6 +18,19 @@ class Tree{
         this.root = null
     }
 
+
+    bfs(fn){
+
+        let arr = [this.root]
+
+        while(arr.length){
+            let node = arr.shift()
+
+            arr.push(...node.children)
+            fn(node)
+        }
+    }
+
     dfs(fn){
 
         let arr = [this.root]
@@ -30,6 +43,7 @@ class Tree{
             fn(node)
         }
     }
+
 }
 
 // let tree = new Tree()

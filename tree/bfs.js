@@ -4,8 +4,8 @@ const { Tree,Node } = require(".");
 let tree = new Tree()
 tree.root = new Node("a")
 tree.root.addNode("b")
-tree.root.addNode("d")
-tree.root.children[0].addNode("c")
+tree.root.addNode("c")
+tree.root.children[0].addNode("d")
 console.log('tree',tree)
 
 let letters = []
