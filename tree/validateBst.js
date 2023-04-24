@@ -18,38 +18,30 @@ class Node{
         }
     }
 
-    validateBst(node,min = null,max = null){
+}
 
-        if(!node) return true
-        debugger
+function validateBst(node,min = null,max = null){
 
-        if (min !== null && node < min ) {
-            return false
-        }
+    if(!node) return true
+    debugger
 
-        if (max !== null && node > max) {
-            return false
-        }
-
-        return (
-            this.validateBst(node.left,min,node.data) && this.validateBst(node.right,node.data,max)
-        )
-
+    if (min !== null && node < min ) {
+        return false
     }
+
+    if (max !== null && node > max) {
+        return false
+    }
+
+    return (
+        validateBst(node.left,min,node.data) && validateBst(node.right,node.data,max)
+    )
+
 }
 
 let node = new Node(100)
-node.left = 50
-node.right = 1000
+node.left = 1000
+node.right = 50
 console.log(node)
 
-// node.addNode(30)
-// node.addNode(120)
-// node.addNode(50)
-// node.addNode(20)
-// node.addNode(150)
-// node.addNode(150)
-// node.addNode(145)
-// node.addNode(110)
-
-console.log(node.validateBst(node))
+console.log(validateBst(node))
